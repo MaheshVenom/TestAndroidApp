@@ -15,5 +15,20 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!-Develop Test123" />
+        android:text="Hello World!-Develop Test123"
+        android:id="@+id/textView" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:text="Trignometric Calc"
+        android:id="@+id/trigButton"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="55dp"
+        android:onClick="openTrig"
+        android:backgroundTint="#f4f6c8" />
 </RelativeLayout>
