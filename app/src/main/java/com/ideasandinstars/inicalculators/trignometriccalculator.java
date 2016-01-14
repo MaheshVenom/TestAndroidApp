@@ -59,7 +59,7 @@ public class trignometriccalculator extends AppCompatActivity implements DialogI
             ei2 = Double.parseDouble(ei1);
             ei2R = ei2 * (Math.PI / 180);
             outValue = Math.cos(ei2R);
-            o2 = Double.toString(round(outValue,5));
+            o2 = Double.toString(round(outValue, 5));
             tOutput.setText(o2);
 
         } catch (final NumberFormatException e) {
@@ -76,7 +76,79 @@ public class trignometriccalculator extends AppCompatActivity implements DialogI
             ei2R = ei2 * (Math.PI / 180);
             outValue = Math.tan(ei2R);
             o2 = Double.toString(round(outValue, 5));
-            tOutput.setText(o2);
+            if (ei2 == 90){
+                tOutput.setText("Not Defined");
+            }else {
+                tOutput.setText(o2);
+            }
+        } catch (final NumberFormatException e) {
+            ei2 = 0.0;
+
+        }
+    }
+    public void secClicked(View v) {
+        eInput = (EditText) findViewById(R.id.etInput);
+        ei1 = eInput.getText().toString();
+
+        try {
+            ei2 = Double.parseDouble(ei1);
+            ei2R = ei2 * (Math.PI / 180);
+            outValue = 1/Math.cos(ei2R);
+            if (round(Math.cos(ei2R),2) == 0.0)
+            {
+                tOutput.setText("Cannot be divided by Zero");
+            }
+            else {
+
+                o2 = Double.toString(round(outValue, 5));
+                tOutput.setText(o2);
+            }
+
+        } catch (final NumberFormatException e) {
+            ei2 = 0.0;
+
+        }
+    }
+    public void csecClicked(View v) {
+        eInput = (EditText) findViewById(R.id.etInput);
+        ei1 = eInput.getText().toString();
+
+        try {
+            ei2 = Double.parseDouble(ei1);
+            ei2R = ei2 * (Math.PI / 180);
+            outValue = 1/Math.sin(ei2R);
+            if (round(Math.sin(ei2R),2) == 0.0)
+            {
+                tOutput.setText("Cannot be divided by Zero");
+            }
+            else {
+
+                o2 = Double.toString(round(outValue, 5));
+                tOutput.setText(o2);
+            }
+
+        } catch (final NumberFormatException e) {
+            ei2 = 0.0;
+
+        }
+    }
+    public void cotClicked(View v) {
+        eInput = (EditText) findViewById(R.id.etInput);
+        ei1 = eInput.getText().toString();
+
+        try {
+            ei2 = Double.parseDouble(ei1);
+            ei2R = ei2 * (Math.PI / 180);
+            outValue = 1/Math.tan(ei2R);
+            if (round(Math.tan(ei2R),2) == 0.0)
+            {
+                tOutput.setText("Cannot be divided by Zero");
+            }
+            else {
+
+                o2 = Double.toString(round(outValue, 5));
+                tOutput.setText(o2);
+            }
         } catch (final NumberFormatException e) {
             ei2 = 0.0;
 
