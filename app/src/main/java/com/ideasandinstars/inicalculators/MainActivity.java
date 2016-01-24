@@ -56,8 +56,22 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     public void openTrig(View v){
-        Intent i1 = new Intent(this,trignometriccalculator.class);
-        startActivity(i1);
+//        Intent i1 = new Intent(this,trignometriccalculator.class);
+  //      startActivity(i1);
+
+        String button_text;
+        button_text = ((Button) v).getText().toString();
+        if(button_text.equals("Simple Converter"))
+        {
+            Intent i3 = new Intent(this,SimpleConversions.class);
+            startActivity(i3);
+
+        }
+        else if(button_text.equals("Trignometric Calc"))
+        {
+            Intent i1 = new Intent(this,trignometriccalculator.class);
+            startActivity(i1);
+        }
 
     }
 

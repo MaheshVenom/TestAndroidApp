@@ -23,9 +23,12 @@
             android:label="@string/app_name">
             <meta-data
                 android:name="android.support.activity_main"
-                android:value="MainActivity"
-                />
+                android:value="MainActivity" />
         </activity>
+        <activity
+            android:name=".SimpleConversions"
+            android:label="@string/title_activity_simple_conversions"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
