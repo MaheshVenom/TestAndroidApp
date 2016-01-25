@@ -155,6 +155,27 @@ public class trignometriccalculator extends AppCompatActivity implements DialogI
         }
     }
 
+    public void logClicked(View v) {
+        eInput = (EditText) findViewById(R.id.etInput);
+        ei1 = eInput.getText().toString();
+
+        try {
+            ei2 = Double.parseDouble(ei1);
+            outValue = 1/Math.log10(ei2);
+            if (ei2 == 0){
+                tOutput.setText("Not Defined");
+            }
+            else {
+
+                o2 = Double.toString(round(outValue, 5));
+                tOutput.setText(o2);
+            }
+        } catch (final NumberFormatException e) {
+            ei2 = 0.0;
+
+        }
+    }
+
     public static double round(double value, int places) {
         if (places < 0) throw new IllegalArgumentException();
         long factor = (long) Math.pow(10, places);
